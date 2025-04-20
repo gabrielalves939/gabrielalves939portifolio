@@ -57,7 +57,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300">Sobre mim</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 dark:from-blue-400 to-cyan-300 animate-pulse">Sobre mim</span>
             </h2>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">

@@ -28,7 +28,7 @@ export default function Header() {
           {/* Logo */}
           <a 
             href="#home" 
-            className="text-2xl font-bold bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold bg-gradient-to-r from-blue-500 dark:from-blue-400 to-cyan-300 bg-clip-text text-transparent hover:opacity-80 transition-opacity animate-pulse"
             onClick={() => scrollToSection('home')}
           >
             Gabriel<span className="text-xl font-light">.Alves</span>

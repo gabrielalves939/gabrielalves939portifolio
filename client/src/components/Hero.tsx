@@ -47,7 +47,7 @@ export default function Hero() {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Eu sou <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300">Gabriel</span>,
+              Eu sou <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 dark:from-blue-400 to-cyan-300 relative animate-pulse">Gabriel</span>,
             </h1>
             
             <div className="relative h-8 overflow-hidden">
@@ -60,7 +60,7 @@ export default function Hero() {
             <div className="pt-4">
               <Button 
                 onClick={() => scrollToElement('contact')}
-                className="px-6 py-6 bg-primary hover:bg-primary/90 text-white"
+                className="px-6 py-6 bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Fale Comigo
                 <ArrowRight className="ml-2 h-4 w-4" />

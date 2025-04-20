@@ -33,7 +33,7 @@ export default function Footer() {
           >
             <a 
               href="#home" 
-              className="text-2xl font-bold bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-blue-500 dark:from-blue-400 to-cyan-300 bg-clip-text text-transparent animate-pulse"
               onClick={(e) => { e.preventDefault(); scrollToTop(); }}
             >
               Gabriel<span className="text-xl font-light">.alves</span>
