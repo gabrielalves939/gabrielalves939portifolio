@@ -56,12 +56,8 @@ export default function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="inline-block px-3 py-1 rounded-full bg-secondary-100 dark:bg-secondary-900/30 text-secondary-600 dark:text-secondary-400 text-sm font-medium">
-              Sobre mim
-            </div>
-            
             <h2 className="text-3xl md:text-4xl font-bold">
-              Transformando ideias em <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-500">soluções práticas</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300">Sobre mim</span>
             </h2>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">

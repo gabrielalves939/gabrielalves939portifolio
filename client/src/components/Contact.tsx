@@ -61,12 +61,12 @@ export default function Contact() {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold">
-              Vamos <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-500">conversar!</span>
+              Vamos <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300">conversar!</span>
             </h2>
             
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Tem um projeto em mente? Quer discutir uma oportunidade? Ou apenas bater um papo sobre tecnologia? 
-              Sinta-se à vontade para entrar em contato comigo!
+              Estou em busca de novas oportunidades de trabalho e disponível para entrevistas.
+              Entre em contato para conversarmos sobre como posso contribuir com a sua empresa!
             </p>
             
             <div className="space-y-4 pt-4">
@@ -185,7 +185,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold mb-6">Envie uma mensagem</h3>
+              <h3 className="text-2xl font-bold mb-6">Entre em contato</h3>
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -232,7 +232,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required 
                     className="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900"
-                    placeholder="Como posso ajudar?"
+                    placeholder="Oportunidade de trabalho"
                   />
                 </div>
                 

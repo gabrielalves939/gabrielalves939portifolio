@@ -34,7 +34,7 @@ contribuir em ambientes dinâmicos e inovadores.`;
 export const CONTACT_INFO = {
   phone: "(19) 98608-9924",
   email: "gabrielalves939@hotmail.com",
-  address: "Rua José Eduardo, Vila Celina - Espirito Santo do Pinhal, São Paulo"
+  address: "Espirito Santo do Pinhal, São Paulo"
 };
 
 export const EDUCATION = [
