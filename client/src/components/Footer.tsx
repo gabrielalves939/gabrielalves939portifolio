@@ -33,10 +33,10 @@ export default function Footer() {
           >
             <a 
               href="#home" 
-              className="text-2xl font-bold bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-500 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300 bg-clip-text text-transparent"
               onClick={(e) => { e.preventDefault(); scrollToTop(); }}
             >
-              Gabriel<span className="text-xl font-light">.dev</span>
+              Gabriel<span className="text-xl font-light">.alves</span>
             </a>
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
               &copy; {currentYear} Gabriel Alves. Todos os direitos reservados.
