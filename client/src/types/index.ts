@@ -36,3 +36,23 @@ export interface SocialLink {
   url: string;
   icon: string;
 }
+
+export interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+  inProgress: boolean;
+}
+
+export interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  duration: string;
+}
+
+export interface ContactInfo {
+  phone: string;
+  email: string;
+  address: string;
+}

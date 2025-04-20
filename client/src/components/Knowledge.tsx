@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { Code, Server, Smartphone } from "lucide-react";
+import { Code, Database, Globe, Server, Heart, Briefcase } from "lucide-react";
 import { SkillCategory, Technology } from "@/types";
+import { TECHNICAL_SKILLS, SOFT_SKILLS } from "@/lib/constants";
 
-// Skill categories data
+// Organize skills into categories based on the PDF information
 const skillCategories: SkillCategory[] = [
   {
     id: 1,
@@ -12,10 +13,9 @@ const skillCategories: SkillCategory[] = [
     iconBgClass: "bg-primary-100 dark:bg-primary-900/30",
     iconColorClass: "text-primary dark:text-primary-400",
     skills: [
-      { name: "HTML5 & CSS3", percentage: 95 },
+      { name: "HTML5/CSS", percentage: 95 },
       { name: "JavaScript", percentage: 90 },
-      { name: "React", percentage: 85 },
-      { name: "TailwindCSS", percentage: 80 }
+      { name: "React", percentage: 80 }
     ]
   },
   {
@@ -26,38 +26,36 @@ const skillCategories: SkillCategory[] = [
     iconBgClass: "bg-secondary-100 dark:bg-secondary-900/30",
     iconColorClass: "text-secondary-600 dark:text-secondary-400",
     skills: [
-      { name: "Node.js", percentage: 85 },
-      { name: "Express", percentage: 80 },
-      { name: "MongoDB", percentage: 75 },
-      { name: "Firebase", percentage: 70 }
+      { name: "PHP", percentage: 90 },
+      { name: "Laravel", percentage: 85 },
+      { name: "MySQL", percentage: 85 }
     ]
   },
   {
     id: 3,
-    title: "Mobile Development",
-    description: "Criação de aplicativos móveis performáticos e intuitivos para iOS e Android.",
-    icon: "smartphone",
+    title: "Outras habilidades",
+    description: "Competências adicionais que complementam meu perfil técnico.",
+    icon: "globe",
     iconBgClass: "bg-purple-100 dark:bg-purple-900/30",
     iconColorClass: "text-purple-600 dark:text-purple-400",
     skills: [
-      { name: "React Native", percentage: 80 },
-      { name: "Swift", percentage: 60 },
-      { name: "Flutter", percentage: 65 },
-      { name: "Kotlin", percentage: 50 }
+      { name: "Lógica de Programação", percentage: 95 },
+      { name: "Linux", percentage: 80 },
+      { name: "Inglês", percentage: 70 }
     ]
   }
 ];
 
 // Technology icons data
 const technologies: Technology[] = [
+  { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" },
+  { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
   { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
   { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
   { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-  { name: "TailwindCSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" }
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" }
 ];
 
 // Helper function to render the appropriate icon
@@ -67,8 +65,12 @@ const renderIcon = (iconName: string, colorClass: string) => {
       return <Code className={`text-xl ${colorClass}`} />;
     case "server":
       return <Server className={`text-xl ${colorClass}`} />;
-    case "smartphone":
-      return <Smartphone className={`text-xl ${colorClass}`} />;
+    case "globe":
+      return <Globe className={`text-xl ${colorClass}`} />;
+    case "heart":
+      return <Heart className={`text-xl ${colorClass}`} />;
+    case "briefcase":
+      return <Briefcase className={`text-xl ${colorClass}`} />;
     default:
       return <Code className={`text-xl ${colorClass}`} />;
   }
