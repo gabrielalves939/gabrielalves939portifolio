@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .perspective-800 {
+    perspective: 800px;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
