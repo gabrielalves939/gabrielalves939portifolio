@@ -47,7 +47,7 @@ export default function Hero() {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Eu sou <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 dark:from-blue-400 to-cyan-300 relative animate-pulse">Gabriel</span>,
+              Eu sou <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 dark:from-blue-300 to-cyan-200 relative animate-pulse">Gabriel</span>,
             </h1>
             
             <div className="relative h-8 overflow-hidden">
