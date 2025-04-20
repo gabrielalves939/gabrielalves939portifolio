@@ -31,7 +31,7 @@ export default function Header() {
             className="text-2xl font-bold bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             onClick={() => scrollToSection('home')}
           >
-            Gabriel<span className="text-xl font-light">.dev</span>
+            Gabriel<span className="text-xl font-light">.Alves</span>
           </a>
           
           {/* Desktop Menu */}

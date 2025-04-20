@@ -14,6 +14,8 @@ export type ProjectCategory = "all" | "web" | "mobile" | "ui";
 export interface Skill {
   name: string;
   percentage: number;
+  color?: string;
+  level?: string;
 }
 
 export interface SkillCategory {

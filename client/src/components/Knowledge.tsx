@@ -23,12 +23,12 @@ const skillCategories: SkillCategory[] = [
     title: "Backend Development",
     description: "Desenvolvimento de APIs e serviços web com foco em performance e escalabilidade.",
     icon: "server",
-    iconBgClass: "bg-secondary-100 dark:bg-secondary-900/30",
-    iconColorClass: "text-secondary-600 dark:text-secondary-400",
+    iconBgClass: "bg-indigo-100 dark:bg-indigo-900/30",
+    iconColorClass: "text-indigo-600 dark:text-indigo-400",
     skills: [
-      { name: "PHP", percentage: 90 },
-      { name: "Laravel", percentage: 85 },
-      { name: "MySQL", percentage: 85 }
+      { name: "PHP", percentage: 90, color: "bg-blue-600 dark:bg-blue-500" },
+      { name: "Laravel", percentage: 85, color: "bg-red-600 dark:bg-red-500" },
+      { name: "MySQL", percentage: 85, color: "bg-orange-500 dark:bg-orange-400" }
     ]
   },
   {
@@ -130,8 +130,9 @@ export default function Knowledge() {
                     <div className="w-24 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                       <motion.div 
                         className={`h-full rounded-full ${
+                          skill.color ? skill.color :
                           category.id === 1 ? 'bg-primary dark:bg-primary-500' :
-                          category.id === 2 ? 'bg-secondary-600 dark:bg-secondary-500' :
+                          category.id === 2 ? 'bg-indigo-600 dark:bg-indigo-500' :
                           'bg-purple-600 dark:bg-purple-500'
                         }`}
                         style={{ width: `${skill.percentage}%` }}

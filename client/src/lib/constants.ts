@@ -41,8 +41,8 @@ export const EDUCATION = [
   {
     institution: "Centro Regional Universitário de Espírito Santo do Pinhal - Unipinhal",
     degree: "Engenharia da Computação",
-    period: "2020 - Julho de 2024",
-    inProgress: true
+    period: "2020 - 2024",
+    inProgress: false
   },
   {
     institution: "ETEC Dr. Carolino da Motta e Silva",
@@ -53,8 +53,8 @@ export const EDUCATION = [
   {
     institution: "Plataforma Alura - Escola de Programação",
     degree: "Cursos de Programação",
-    period: "Em andamento",
-    inProgress: true
+    period: "Concluído",
+    inProgress: false
   }
 ];
 

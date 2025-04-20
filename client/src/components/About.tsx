@@ -31,7 +31,7 @@ export default function About() {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl mx-auto">
                 <img 
-                  src="/assets/images/gabrielimglinkedin.jpeg" 
+                  src="/assets/images/gabriel-profile.png" 
                   alt="Gabriel Alves" 
                   className="w-full h-full object-cover"
                 />
