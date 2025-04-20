@@ -223,9 +223,13 @@ export default function Hero() {
                   }}
                   whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
                 >
-                  <div className="w-10 h-10 bg-amber-400 rounded-md flex items-center justify-center text-white">
+                  <motion.div 
+                    className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-md flex items-center justify-center text-white shadow-md"
+                    animate={{ boxShadow: ["0 0 0 rgba(250, 204, 21, 0.5)", "0 0 15px rgba(250, 204, 21, 0.8)", "0 0 0 rgba(250, 204, 21, 0.5)"] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
                     <i className="fa-brands fa-js text-lg"></i>
-                  </div>
+                  </motion.div>
                 </motion.div>
                 
                 <motion.div 
@@ -239,9 +243,15 @@ export default function Hero() {
                   }}
                   whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                 >
-                  <div className="w-10 h-10 bg-primary rounded-md flex items-center justify-center text-white">
+                  <motion.div 
+                    className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-md flex items-center justify-center text-white shadow-md"
+                    animate={{ boxShadow: ["0 0 0 rgba(59, 130, 246, 0.5)", "0 0 15px rgba(59, 130, 246, 0.8)", "0 0 0 rgba(59, 130, 246, 0.5)"], 
+                               rotate: [0, 360] }}
+                    transition={{ boxShadow: { duration: 2, repeat: Infinity },
+                                 rotate: { duration: 8, repeat: Infinity, ease: "linear" } }}
+                  >
                     <i className="fa-brands fa-react text-lg"></i>
-                  </div>
+                  </motion.div>
                 </motion.div>
                 
                 <motion.div 
@@ -255,9 +265,15 @@ export default function Hero() {
                   }}
                   whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
                 >
-                  <div className="w-10 h-10 bg-blue-500 rounded-md flex items-center justify-center text-white">
+                  <motion.div 
+                    className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-md flex items-center justify-center text-white shadow-md"
+                    animate={{ boxShadow: ["0 0 0 rgba(59, 130, 246, 0.5)", "0 0 15px rgba(59, 130, 246, 0.8)", "0 0 0 rgba(59, 130, 246, 0.5)"],
+                               y: [0, -5, 0] }}
+                    transition={{ boxShadow: { duration: 2, repeat: Infinity },
+                                 y: { duration: 1.5, repeat: Infinity, ease: "easeInOut" } }}
+                  >
                     <i className="fa-brands fa-css3-alt text-lg"></i>
-                  </div>
+                  </motion.div>
                 </motion.div>
                 
                 <motion.div 
@@ -271,19 +287,26 @@ export default function Hero() {
                   }}
                   whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                 >
-                  <div className="w-10 h-10 bg-orange-500 rounded-md flex items-center justify-center text-white">
+                  <motion.div 
+                    className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-md flex items-center justify-center text-white shadow-md"
+                    animate={{ boxShadow: ["0 0 0 rgba(249, 115, 22, 0.5)", "0 0 15px rgba(249, 115, 22, 0.8)", "0 0 0 rgba(249, 115, 22, 0.5)"],
+                               scale: [1, 1.1, 1] }}
+                    transition={{ boxShadow: { duration: 2, repeat: Infinity },
+                                 scale: { duration: 1.5, repeat: Infinity, ease: "easeInOut" } }}
+                  >
                     <i className="fa-brands fa-html5 text-lg"></i>
-                  </div>
+                  </motion.div>
                 </motion.div>
                 
                 {/* Partículas de código */}
                 <motion.div 
-                  className="absolute bottom-3 left-5 w-2 h-2 bg-primary rounded-full"
-                  initial={{ opacity: 0, y: 0 }}
+                  className="absolute bottom-3 left-5 w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-300 rounded-full shadow-md"
+                  initial={{ opacity: 0, y: 0, boxShadow: "0 0 0 rgba(59, 130, 246, 0)" }}
                   animate={{ 
                     opacity: [0, 1, 0], 
                     y: -50,
-                    x: 20 
+                    x: 20,
+                    boxShadow: ["0 0 0 rgba(59, 130, 246, 0)", "0 0 10px rgba(59, 130, 246, 0.8)", "0 0 0 rgba(59, 130, 246, 0)"]
                   }}
                   transition={{ 
                     duration: 2,
@@ -293,12 +316,13 @@ export default function Hero() {
                 />
                 
                 <motion.div 
-                  className="absolute top-20 right-10 w-3 h-3 bg-secondary-500 rounded-full"
-                  initial={{ opacity: 0, y: 0 }}
+                  className="absolute top-20 right-10 w-3 h-3 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-full shadow-md"
+                  initial={{ opacity: 0, y: 0, boxShadow: "0 0 0 rgba(45, 212, 191, 0)" }}
                   animate={{ 
                     opacity: [0, 1, 0], 
                     y: 70,
-                    x: -30 
+                    x: -30,
+                    boxShadow: ["0 0 0 rgba(45, 212, 191, 0)", "0 0 10px rgba(45, 212, 191, 0.8)", "0 0 0 rgba(45, 212, 191, 0)"]
                   }}
                   transition={{ 
                     duration: 2.5,
@@ -309,18 +333,54 @@ export default function Hero() {
                 />
                 
                 <motion.div 
-                  className="absolute bottom-40 right-5 w-2 h-2 bg-amber-400 rounded-full"
-                  initial={{ opacity: 0, y: 0 }}
+                  className="absolute bottom-40 right-5 w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-300 rounded-full shadow-md"
+                  initial={{ opacity: 0, y: 0, boxShadow: "0 0 0 rgba(251, 191, 36, 0)" }}
                   animate={{ 
                     opacity: [0, 1, 0], 
                     y: -40,
-                    x: -20 
+                    x: -20,
+                    boxShadow: ["0 0 0 rgba(251, 191, 36, 0)", "0 0 10px rgba(251, 191, 36, 0.8)", "0 0 0 rgba(251, 191, 36, 0)"]
                   }}
                   transition={{ 
                     duration: 2,
                     repeat: Infinity,
                     repeatDelay: 4,
                     delay: 2
+                  }}
+                />
+                
+                {/* Partículas adicionais */}
+                <motion.div 
+                  className="absolute top-40 left-20 w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-400 rounded-full shadow-md"
+                  initial={{ opacity: 0, y: 0, boxShadow: "0 0 0 rgba(168, 85, 247, 0)" }}
+                  animate={{ 
+                    opacity: [0, 1, 0], 
+                    y: 30,
+                    x: 40,
+                    boxShadow: ["0 0 0 rgba(168, 85, 247, 0)", "0 0 10px rgba(168, 85, 247, 0.8)", "0 0 0 rgba(168, 85, 247, 0)"]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatDelay: 3,
+                    delay: 1.5
+                  }}
+                />
+                
+                <motion.div 
+                  className="absolute bottom-20 left-30 w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-300 rounded-full shadow-md"
+                  initial={{ opacity: 0, y: 0, boxShadow: "0 0 0 rgba(52, 211, 153, 0)" }}
+                  animate={{ 
+                    opacity: [0, 1, 0], 
+                    y: -60,
+                    x: 15,
+                    boxShadow: ["0 0 0 rgba(52, 211, 153, 0)", "0 0 10px rgba(52, 211, 153, 0.8)", "0 0 0 rgba(52, 211, 153, 0)"]
+                  }}
+                  transition={{ 
+                    duration: 2.2,
+                    repeat: Infinity,
+                    repeatDelay: 2.5,
+                    delay: 0.8
                   }}
                 />
               </div>

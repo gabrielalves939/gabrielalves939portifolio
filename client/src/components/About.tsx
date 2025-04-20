@@ -100,7 +100,7 @@ export default function About() {
             <div className="pt-4">
               <Button
                 variant="outline"
-                className="px-5 py-6 border-primary dark:border-primary-400 text-primary dark:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="px-5 py-6 border-blue-500 dark:border-blue-400 text-blue-500 dark:text-blue-400 hover:bg-blue-500/10 dark:hover:bg-blue-400/10 transition-all duration-300"
                 onClick={() => scrollToElement('projects')}
               >
                 Ver meus projetos
