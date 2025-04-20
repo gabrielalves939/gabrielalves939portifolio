@@ -65,7 +65,7 @@ export default function Projects() {
             Meus Projetos
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mt-4">
-            Projetos <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 dark:from-blue-400 to-cyan-300 animate-pulse">Em Destaque</span>
+            Projetos <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 dark:from-blue-300 to-cyan-200 animate-pulse">Em Destaque</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
             Confira alguns dos meus trabalhos mais recentes e interessantes.

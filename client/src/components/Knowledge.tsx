@@ -49,7 +49,7 @@ const skillCategories: SkillCategory[] = [
 // Technology icons data
 const technologies: Technology[] = [
   { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" },
-  { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
+  { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain-wordmark.svg" },
   { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
   { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
   { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
@@ -91,7 +91,7 @@ export default function Knowledge() {
             Minhas Habilidades
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mt-4">
-            Conhecimentos <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 dark:from-blue-400 to-cyan-300 animate-pulse">& Tecnologias</span>
+            Conhecimentos <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 dark:from-blue-300 to-cyan-200 animate-pulse">& Tecnologias</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
             Tecnologias e frameworks com os quais já trabalhei e continuo estudando.
