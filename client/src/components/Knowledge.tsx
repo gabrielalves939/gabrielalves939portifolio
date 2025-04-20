@@ -91,7 +91,7 @@ export default function Knowledge() {
             Minhas Habilidades
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mt-4">
-            Conhecimentos <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-500">& Tecnologias</span>
+            Conhecimentos <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300">& Tecnologias</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
             Tecnologias e frameworks com os quais já trabalhei e continuo estudando.

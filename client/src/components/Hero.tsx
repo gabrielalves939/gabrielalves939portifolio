@@ -47,7 +47,7 @@ export default function Hero() {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Eu sou <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-500">Gabriel</span>,
+              Eu sou <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300">Gabriel</span>,
             </h1>
             
             <div className="relative h-8 overflow-hidden">
@@ -111,7 +111,7 @@ export default function Hero() {
                   animate={{ opacity: 0.15 }}
                   transition={{ duration: 1 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary-500/40 dark:from-primary-500/40 dark:to-secondary-400/40"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary-300/40 dark:from-primary-500/40 dark:to-secondary-300/40"></div>
                   <pre className="text-[8px] text-black dark:text-white p-4 font-mono overflow-hidden">
                     {`function Portfolio() {
   const [isLoading, setIsLoading] = useState(true);

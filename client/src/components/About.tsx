@@ -43,7 +43,7 @@ export default function About() {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-500 bg-clip-text text-transparent">4+</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300 bg-clip-text text-transparent">4+</div>
                 <div className="text-sm text-gray-500 dark:text-gray-400">anos de experiência</div>
               </motion.div>
             </div>
