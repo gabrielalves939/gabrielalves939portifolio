@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TYPING_TEXT, SOCIAL_LINKS } from "@/lib/constants";
+import { scrollToElement } from "@/lib/utils";
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("");
-  const fullText = "Software Developer | Computer Engineer";
+  const fullText = TYPING_TEXT;
   const [isTyping, setIsTyping] = useState(true);
   
   useEffect(() => {
@@ -28,15 +30,7 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [typedText, isTyping]);
   
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
+  // Usando a função utils scrollToElement
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-20">
@@ -65,7 +59,7 @@ export default function Hero() {
             
             <div className="pt-4">
               <Button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToElement('contact')}
                 className="px-6 py-6 bg-primary hover:bg-primary/90 text-white"
               >
                 Fale Comigo

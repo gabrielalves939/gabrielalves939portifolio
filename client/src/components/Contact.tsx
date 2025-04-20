@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Linkedin, Send } from "lucide-react";
+import { Mail, MapPin, Linkedin, Send, Phone, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -82,10 +83,10 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-medium">Email</h3>
                   <a 
-                    href="mailto:gabriel@example.com" 
+                    href={`mailto:${CONTACT_INFO.email}`} 
                     className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400"
                   >
-                    gabriel@example.com
+                    {CONTACT_INFO.email}
                   </a>
                 </div>
               </motion.div>
@@ -98,13 +99,16 @@ export default function Contact() {
                 viewport={{ once: true }}
               >
                 <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mr-4">
-                  <MapPin className="text-primary dark:text-primary-400 h-5 w-5" />
+                  <Phone className="text-primary dark:text-primary-400 h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium">Localização</h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Brasil
-                  </p>
+                  <h3 className="text-lg font-medium">Telefone</h3>
+                  <a
+                    href={`tel:${CONTACT_INFO.phone.replace(/\D/g, '')}`}
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400"
+                  >
+                    {CONTACT_INFO.phone}
+                  </a>
                 </div>
               </motion.div>
               
@@ -116,17 +120,58 @@ export default function Contact() {
                 viewport={{ once: true }}
               >
                 <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mr-4">
+                  <MapPin className="text-primary dark:text-primary-400 h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium">Localização</h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {CONTACT_INFO.address}
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mr-4">
                   <Linkedin className="text-primary dark:text-primary-400 h-5 w-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-medium">LinkedIn</h3>
                   <a 
-                    href="https://www.linkedin.com/in/gabrielalves939/" 
+                    href={SOCIAL_LINKS[1].url}
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400"
                   >
                     /gabrielalves939
+                  </a>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mr-4">
+                  <Github className="text-primary dark:text-primary-400 h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium">GitHub</h3>
+                  <a 
+                    href={SOCIAL_LINKS[0].url}
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400"
+                  >
+                    github.com/gabrielalves939
                   </a>
                 </div>
               </motion.div>

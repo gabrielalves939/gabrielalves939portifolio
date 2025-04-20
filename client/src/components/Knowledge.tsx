@@ -168,6 +168,42 @@ export default function Knowledge() {
             ))}
           </div>
         </div>
+        
+        {/* Soft Skills */}
+        <motion.div 
+          className="mt-16 bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-12 h-12 rounded-lg bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center">
+              <Heart className="text-xl text-rose-600 dark:text-rose-400" />
+            </div>
+            <h3 className="text-2xl font-bold">Soft Skills</h3>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {SOFT_SKILLS.map((skill, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 flex items-center gap-3"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.03,
+                  boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" 
+                }}
+              >
+                <div className="h-2 w-2 rounded-full bg-primary dark:bg-primary-400"></div>
+                <span className="font-medium">{skill}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
