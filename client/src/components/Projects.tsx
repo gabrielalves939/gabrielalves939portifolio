@@ -65,7 +65,7 @@ export default function Projects() {
             Meus Projetos
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mt-4">
-            Projetos <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary dark:from-primary-400 to-secondary-300">Em Destaque</span>
+            Projetos <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 dark:from-blue-400 to-cyan-300 animate-pulse">Em Destaque</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
             Confira alguns dos meus trabalhos mais recentes e interessantes.
@@ -78,7 +78,7 @@ export default function Projects() {
             variant={activeFilter === "all" ? "default" : "outline"}
             className={cn(
               "rounded-full text-sm",
-              activeFilter === "all" ? "bg-primary hover:bg-primary/90" : ""
+              activeFilter === "all" ? "bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500" : ""
             )}
             onClick={() => filterProjects("all")}
           >
@@ -88,7 +88,7 @@ export default function Projects() {
             variant={activeFilter === "web" ? "default" : "outline"}
             className={cn(
               "rounded-full text-sm",
-              activeFilter === "web" ? "bg-primary hover:bg-primary/90" : ""
+              activeFilter === "web" ? "bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500" : ""
             )}
             onClick={() => filterProjects("web")}
           >
@@ -98,7 +98,7 @@ export default function Projects() {
             variant={activeFilter === "mobile" ? "default" : "outline"}
             className={cn(
               "rounded-full text-sm",
-              activeFilter === "mobile" ? "bg-primary hover:bg-primary/90" : ""
+              activeFilter === "mobile" ? "bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500" : ""
             )}
             onClick={() => filterProjects("mobile")}
           >
@@ -108,7 +108,7 @@ export default function Projects() {
             variant={activeFilter === "ui" ? "default" : "outline"}
             className={cn(
               "rounded-full text-sm",
-              activeFilter === "ui" ? "bg-primary hover:bg-primary/90" : ""
+              activeFilter === "ui" ? "bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500" : ""
             )}
             onClick={() => filterProjects("ui")}
           >
@@ -200,7 +200,7 @@ export default function Projects() {
         <div className="text-center mt-12">
           <Button
             variant="outline"
-            className="px-6 py-6 border-primary dark:border-primary-400 text-primary dark:text-primary-400"
+            className="px-6 py-6 border-blue-500 dark:border-blue-400 text-blue-500 dark:text-blue-400 hover:bg-blue-500/10 dark:hover:bg-blue-400/10"
           >
             Ver todos os projetos
             <ArrowRight className="ml-2 h-4 w-4" />
