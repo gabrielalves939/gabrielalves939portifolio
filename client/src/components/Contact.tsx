@@ -61,7 +61,7 @@ export default function Contact() {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold">
-              Vamos <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 dark:from-blue-300 to-cyan-200 animate-pulse">conversar!</span>
+              Vamos <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 dark:from-blue-300 to-blue-100 dark:to-blue-100 animate-pulse">conversar!</span>
             </h2>
             
             <p className="text-lg text-gray-600 dark:text-gray-300">

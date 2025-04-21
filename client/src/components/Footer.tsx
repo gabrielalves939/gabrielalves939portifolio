@@ -36,7 +36,7 @@ export default function Footer() {
               className="text-2xl font-bold"
               onClick={(e) => { e.preventDefault(); scrollToTop(); }}
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 dark:from-blue-300 to-cyan-200 animate-pulse">Gabriel</span><span className="text-xl font-light">.Alves</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 dark:from-blue-300 to-blue-100 dark:to-blue-100 animate-pulse">Gabriel</span><span className="text-xl font-light">.Alves</span>
             </a>
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
               &copy; {currentYear} Gabriel Alves. Todos os direitos reservados.
