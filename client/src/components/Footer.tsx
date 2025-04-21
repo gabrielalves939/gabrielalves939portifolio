@@ -39,7 +39,7 @@ export default function Footer() {
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 dark:from-blue-300 to-blue-100 dark:to-blue-100 animate-pulse">Gabriel</span><span className="text-xl font-light">.Alves</span>
             </a>
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              &copy; {currentYear} Gabriel Alves. Todos os direitos reservados.
+              &copy; {currentYear} Gabriel Alves. Todos os direitos reservados. Portfolio v1.0
             </p>
           </motion.div>
           
