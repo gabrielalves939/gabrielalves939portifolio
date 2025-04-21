@@ -76,13 +76,14 @@ export default function Header() {
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full"
+              className="rounded-full border-blue-400 dark:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30"
               onClick={toggleTheme}
+              aria-label={theme === 'light' ? "Ativar modo escuro" : "Ativar modo claro"}
             >
               {theme === 'light' ? (
-                <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-400" />
+                <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-500" />
               ) : (
-                <Moon className="h-[1.2rem] w-[1.2rem] text-indigo-300" />
+                <Moon className="h-[1.2rem] w-[1.2rem] text-blue-300" />
               )}
             </Button>
           </div>
