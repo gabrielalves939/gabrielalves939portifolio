@@ -7,13 +7,13 @@ import {
   EXPERIENCE 
 } from "@/lib/constants";
 import { scrollToElement } from "@/lib/utils";
-import { 
-  Tabs, 
-  TabsContent, 
-  TabsList, 
-  TabsTrigger 
-} from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function About() {
   return (
@@ -110,89 +110,97 @@ export default function About() {
           </motion.div>
         </div>
         
-        {/* Experience and Education Tabs */}
+        {/* Experience and Education Accordions */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
+          className="space-y-8"
         >
-          <Tabs defaultValue="experience" className="w-full">
-            <TabsList className="grid w-full md:w-96 mx-auto grid-cols-2 mb-8">
-              <TabsTrigger value="experience" className="text-base md:text-lg">
-                <Briefcase className="mr-2 h-4 w-4" />
-                Experiência
-              </TabsTrigger>
-              <TabsTrigger value="education" className="text-base md:text-lg">
-                <GraduationCap className="mr-2 h-4 w-4" />
-                Educação
-              </TabsTrigger>
-            </TabsList>
-            
-            {/* Experience Content */}
-            <TabsContent value="experience" className="space-y-8">
-              <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-600 before:to-transparent">
-                {EXPERIENCE.map((exp, index) => (
-                  <motion.div 
-                    key={index}
-                    className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-700 bg-primary dark:bg-primary-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                      {index + 1}
-                    </div>
-                    
-                    <div className="w-full md:w-[calc(50%-2.5rem)] bg-white dark:bg-gray-900 p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                      <div className="flex items-center justify-between mb-1">
-                        <div className="font-semibold text-lg text-primary dark:text-primary-400">{exp.role}</div>
-                        <Badge className="bg-primary/10 dark:bg-primary-900/30 text-primary dark:text-primary-400 hover:bg-primary/20 dark:hover:bg-primary-900/40">
-                          {exp.duration}
-                        </Badge>
+          {/* Experience Accordion */}
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="experience" className="border-none">
+              <AccordionTrigger className="py-6 px-8 bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 dark:from-blue-600 dark:to-blue-500 dark:hover:from-blue-700 dark:hover:to-blue-600 text-white rounded-xl font-medium text-xl flex items-center shadow-md transition-all">
+                <div className="flex items-center">
+                  <Briefcase className="mr-3 h-5 w-5" />
+                  Experiência Profissional
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pt-8 pb-2">
+                <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-600 before:to-transparent">
+                  {EXPERIENCE.map((exp, index) => (
+                    <motion.div 
+                      key={index}
+                      className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-700 bg-primary dark:bg-primary-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        {index + 1}
                       </div>
-                      <div className="text-slate-500 dark:text-slate-400 mb-2">{exp.company}</div>
-                      <div className="text-sm text-slate-500 dark:text-slate-400">{exp.period}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </TabsContent>
-            
-            {/* Education Content */}
-            <TabsContent value="education" className="space-y-8">
-              <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-600 before:to-transparent">
-                {EDUCATION.map((edu, index) => (
-                  <motion.div 
-                    key={index}
-                    className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-700 bg-secondary-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                      <GraduationCap className="h-5 w-5" />
-                    </div>
-                    
-                    <div className="w-full md:w-[calc(50%-2.5rem)] bg-white dark:bg-gray-900 p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                      <div className="flex items-center justify-between mb-1">
-                        <div className="font-semibold text-lg text-secondary-600 dark:text-secondary-400">{edu.degree}</div>
-                        {edu.inProgress && (
-                          <Badge className="bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 hover:bg-amber-200">
-                            Em andamento
+                      
+                      <div className="w-full md:w-[calc(50%-2.5rem)] bg-white dark:bg-gray-900 p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div className="flex items-center justify-between mb-1">
+                          <div className="font-semibold text-lg text-primary dark:text-primary-400">{exp.role}</div>
+                          <Badge className="bg-primary/10 dark:bg-primary-900/30 text-primary dark:text-primary-400 hover:bg-primary/20 dark:hover:bg-primary-900/40">
+                            {exp.duration}
                           </Badge>
-                        )}
+                        </div>
+                        <div className="text-slate-500 dark:text-slate-400 mb-2">{exp.company}</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400">{exp.period}</div>
                       </div>
-                      <div className="text-slate-500 dark:text-slate-400 mb-2">{edu.institution}</div>
-                      <div className="text-sm text-slate-500 dark:text-slate-400">{edu.period}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
+                    </motion.div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+
+          {/* Education Accordion */}
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="education" className="border-none">
+              <AccordionTrigger className="py-6 px-8 bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 dark:from-blue-600 dark:to-blue-500 dark:hover:from-blue-700 dark:hover:to-blue-600 text-white rounded-xl font-medium text-xl flex items-center shadow-md transition-all">
+                <div className="flex items-center">
+                  <GraduationCap className="mr-3 h-5 w-5" />
+                  Formação Acadêmica
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pt-8 pb-2">
+                <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-600 before:to-transparent">
+                  {EDUCATION.map((edu, index) => (
+                    <motion.div 
+                      key={index}
+                      className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-700 bg-secondary-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <GraduationCap className="h-5 w-5" />
+                      </div>
+                      
+                      <div className="w-full md:w-[calc(50%-2.5rem)] bg-white dark:bg-gray-900 p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div className="flex items-center justify-between mb-1">
+                          <div className="font-semibold text-lg text-secondary-600 dark:text-secondary-400">{edu.degree}</div>
+                          {edu.inProgress && (
+                            <Badge className="bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 hover:bg-amber-200">
+                              Em andamento
+                            </Badge>
+                          )}
+                        </div>
+                        <div className="text-slate-500 dark:text-slate-400 mb-2">{edu.institution}</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400">{edu.period}</div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </motion.div>
       </div>
     </section>
