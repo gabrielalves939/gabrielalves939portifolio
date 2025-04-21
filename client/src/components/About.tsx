@@ -121,10 +121,10 @@ export default function About() {
           {/* Experience Accordion */}
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="experience" className="border-none">
-              <AccordionTrigger className="py-6 px-8 bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 dark:from-blue-600 dark:to-blue-500 dark:hover:from-blue-700 dark:hover:to-blue-600 text-white rounded-xl font-medium text-xl flex items-center shadow-md transition-all">
-                <div className="flex items-center">
-                  <Briefcase className="mr-3 h-5 w-5" />
-                  Experiência Profissional
+              <AccordionTrigger className="py-6 px-8 bg-gray-800/90 dark:bg-gray-900 hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-800 dark:hover:from-blue-800 dark:hover:to-blue-700 text-white rounded-xl font-medium text-xl flex items-center shadow-md transition-all duration-300 hover:shadow-blue-800/20 hover:shadow-xl group hover:scale-[1.01] motion-safe:animate-subtle-pulse">
+                <div className="flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                  <Briefcase className="mr-3 h-5 w-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-100 group-hover:from-blue-300 group-hover:to-white transition-colors">Experiência Profissional</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="pt-8 pb-2">
@@ -162,10 +162,10 @@ export default function About() {
           {/* Education Accordion */}
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="education" className="border-none">
-              <AccordionTrigger className="py-6 px-8 bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 dark:from-blue-600 dark:to-blue-500 dark:hover:from-blue-700 dark:hover:to-blue-600 text-white rounded-xl font-medium text-xl flex items-center shadow-md transition-all">
-                <div className="flex items-center">
-                  <GraduationCap className="mr-3 h-5 w-5" />
-                  Formação Acadêmica
+              <AccordionTrigger className="py-6 px-8 bg-gray-800/90 dark:bg-gray-900 hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-800 dark:hover:from-blue-800 dark:hover:to-blue-700 text-white rounded-xl font-medium text-xl flex items-center shadow-md transition-all duration-300 hover:shadow-blue-800/20 hover:shadow-xl group hover:scale-[1.01] motion-safe:animate-subtle-pulse">
+                <div className="flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                  <GraduationCap className="mr-3 h-5 w-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-100 group-hover:from-blue-300 group-hover:to-white transition-colors">Formação Acadêmica</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="pt-8 pb-2">
