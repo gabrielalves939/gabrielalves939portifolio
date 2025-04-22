@@ -1,43 +1,41 @@
-# Instruções para Deploy no GitHub Pages
+# Configuração de Token de Acesso Pessoal do GitHub
 
-Para fazer o deploy do seu portfólio React no GitHub Pages exatamente como está no Replit, siga estas instruções:
+Para conectar seu repositório Replit ao GitHub com as credenciais corretas, siga estes passos:
 
-## 1. Gerar um token de acesso pessoal no GitHub
+## Passo 1: Criar um Token de Acesso Pessoal no GitHub
 
-1. Acesse [https://github.com/settings/tokens](https://github.com/settings/tokens)
-2. Clique em "Generate new token" e depois "Generate new token (classic)"
-3. Dê um nome ao token, como "deploy-portfolio"
-4. Selecione os seguintes escopos: `repo` (todos)
-5. Clique em "Generate token"
-6. **IMPORTANTE**: Copie o token gerado e guarde-o em um lugar seguro, pois ele não será mostrado novamente
+1. Acesse [GitHub > Settings > Developer Settings > Personal Access Tokens](https://github.com/settings/tokens)
+2. Clique em "Generate new token" (Classic)
+3. Dê um nome descritivo como "Replit Portfolio Access"
+4. Selecione os seguintes escopos:
+   - `repo` (acesso completo aos repositórios)
+   - `workflow` (se estiver usando GitHub Actions)
+5. Defina uma expiração (recomendado: 30 dias)
+6. Clique em "Generate token"
+7. **IMPORTANTE**: Copie o token gerado. Você não poderá vê-lo novamente!
 
-## 2. Configurar o GitHub Pages
+## Passo 2: Configurar o token no Replit
 
-1. Crie um repositório no GitHub (se ainda não tiver) com o nome `gabrielalves939portifolio`
-2. Vá para as configurações do repositório (Settings)
-3. Na seção Pages, selecione:
-   - Source: "Deploy from a branch"
-   - Branch: "gh-pages" (essa branch será criada automaticamente pelo script de deploy)
-   - Pasta: "/ (root)"
-4. Clique em "Save"
-
-## 3. Executar o script de deploy
-
-Execute o script de deploy que prepara os arquivos, compila o projeto e envia para o GitHub Pages:
-
+### Método 1: Usando credenciais no Git
 ```bash
-# No terminal do Replit
-./deploy-github.sh SEU_TOKEN_DO_GITHUB
+git remote set-url origin https://[SEU_NOME_DE_USUARIO]:[SEU_TOKEN]@github.com/gabrielalves939/gabrielalves939portifolio.git
 ```
 
-## 4. Verificar o deploy
+Substitua [SEU_NOME_DE_USUARIO] por "gabrielalves939" e [SEU_TOKEN] pelo token que você acabou de gerar.
 
-Após o deploy, seu site estará disponível em aproximadamente 1-2 minutos em:
-[https://gabrielalves939.github.io/gabrielalves939portifolio/](https://gabrielalves939.github.io/gabrielalves939portifolio/)
+### Método 2: Usando o Git Credential Helper
+```bash
+git config --global credential.helper store
+echo "https://gabrielalves939:[SEU_TOKEN]@github.com" > ~/.git-credentials
+```
 
-## Notas importantes
+## Passo 3: Tentar fazer push novamente
+```bash
+git push origin main
+```
 
-- O processo de build compila o React e prepara arquivos estáticos otimizados
-- Todo o código dinâmico é transformado em JavaScript que roda diretamente no navegador
-- O site manterá todas as animações e recursos visuais do Replit
-- Para futuras atualizações, basta executar novamente o script de deploy
+## Dicas de Segurança
+- Não compartilhe seu token com ninguém
+- Defina uma data de expiração curta
+- Limite os escopos ao mínimo necessário
+- Revogue o token quando não precisar mais dele
