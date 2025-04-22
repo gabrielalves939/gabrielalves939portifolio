@@ -4,7 +4,8 @@ echo "Iniciando deploy para GitHub Pages..."
 
 # Limpar diretórios antigos se existirem
 rm -rf dist
-rm -rf docs/dist
+rm -rf docs/assets
+rm -rf docs/index.html
 
 # Iniciar o workflow para build
 echo "Iniciando o build da aplicação..."
@@ -12,64 +13,13 @@ npm run build
 
 # Criar estrutura para o GitHub Pages
 echo "Preparando arquivos para o GitHub Pages..."
-mkdir -p docs/dist
-cp -r dist/* docs/dist/
+mkdir -p docs
 
-# Garantir que os arquivos de redirecionamento estejam atualizados
-cat > docs/index.html << EOL
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gabriel Alves - Portfólio</title>
-  <meta http-equiv="refresh" content="0;url=./dist/index.html">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-      background-color: #0f172a;
-      color: white;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      background: linear-gradient(to right, #3b82f6, #bfdbfe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
-    a {
-      color: #3b82f6;
-      text-decoration: none;
-      border: 1px solid #3b82f6;
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
-    a:hover {
-      background-color: #3b82f6;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-  <h1>Gabriel Alves - Portfólio</h1>
-  <p>Redirecionando para o portfólio...</p>
-  <p>Se o redirecionamento não funcionar, <a href="./dist/index.html">clique aqui</a>.</p>
-</body>
-</html>
-EOL
+# Copia o arquivo HTML principal com caminhos relativos
+cat dist/public/index.html | sed -e 's|src="/assets/|src="./assets/|g' -e 's|href="/assets/|href="./assets/|g' > docs/index.html
+
+# Copia os assets para a pasta docs
+cp -r dist/public/assets docs/
 
 # Criar arquivo .nojekyll para evitar processamento Jekyll no GitHub Pages
 touch docs/.nojekyll
@@ -77,7 +27,6 @@ touch docs/.nojekyll
 # Adicionar arquivos ao git
 echo "Adicionando arquivos ao repositório..."
 git add docs -f
-git add index.html -f
 
 # Configurar e-mail e nome para o commit
 git config user.email "gabrielalves939@gmail.com"
