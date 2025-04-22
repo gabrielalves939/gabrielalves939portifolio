@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gabriel Alves | Portfolio</title>
+  <script type="text/javascript">
+    // Solução para o GitHub Pages SPA
+    // Redireciona para a URL correta mantendo o path
+    var pathSegmentsToKeep = 1;
+    var l = window.location;
+    
+    // Redirecionar com preenchimento do path na URL principal
+    var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/') +
+      (l.search ? '&' + l.search.slice(1) : '') +
+      l.hash;
+      
+    window.location.replace(redirectUrl);
+  </script>
+</head>
+<body>
+  Redirecionando...
+</body>
+</html>
