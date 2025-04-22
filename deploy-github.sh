@@ -43,6 +43,10 @@ else
 fi
 mv "$TMP_FILE" vite.config.ts
 
+# Atualize o browserslist database para evitar warnings
+echo "Atualizando browserslist database..."
+npx update-browserslist-db@latest
+
 # Configura o Git para o deploy
 echo "Configurando Git para deploy..."
 git config --global user.name "Gabriel Alves"
