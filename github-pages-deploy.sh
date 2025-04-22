@@ -1,44 +1,37 @@
 #!/bin/bash
 
-echo "Iniciando deploy para GitHub Pages..."
+# Script para facilitar o deploy no GitHub Pages
+echo "========================================"
+echo "Script de Deploy para GitHub Pages"
+echo "========================================"
 
-# Limpar diretórios antigos se existirem
-rm -rf dist
-rm -rf docs/assets
-rm -rf docs/index.html
+# Verifica se estamos na raiz do projeto
+if [ ! -f "package.json" ]; then
+  echo "Erro: Execute este script da raiz do projeto!"
+  exit 1
+fi
 
-# Iniciar o workflow para build
-echo "Iniciando o build da aplicação..."
-npm run build
+# Cria a pasta de build se não existir
+mkdir -p github-build/assets
 
-# Criar estrutura para o GitHub Pages
-echo "Preparando arquivos para o GitHub Pages..."
-mkdir -p docs
+# Copia o arquivo HTML para a raiz
+echo "Copiando arquivo index.html para a raiz..."
+cp github-build/index.html index.html
 
-# Copia o arquivo HTML principal com caminhos relativos
-cat dist/public/index.html | sed -e 's|src="/assets/|src="./assets/|g' -e 's|href="/assets/|href="./assets/|g' > docs/index.html
+# Garante que o arquivo .nojekyll existe
+echo "Criando arquivo .nojekyll..."
+touch .nojekyll
 
-# Copia os assets para a pasta docs
-cp -r dist/public/assets docs/
+# Commit das alterações
+echo "Commitando alterações..."
+git add index.html .nojekyll
+git commit -m "Atualiza versão estática para GitHub Pages"
 
-# Criar arquivo .nojekyll para evitar processamento Jekyll no GitHub Pages
-touch docs/.nojekyll
-
-# Adicionar arquivos ao git
-echo "Adicionando arquivos ao repositório..."
-git add docs -f
-
-# Configurar e-mail e nome para o commit
-git config user.email "gabrielalves939@gmail.com"
-git config user.name "Gabriel Alves"
-
-# Fazer commit e push
-git commit -m "Deploy para GitHub Pages"
-git push origin main
-
-echo "----------------------------------------"
-echo "Deploy para GitHub Pages concluído!"
-echo "IMPORTANTE: Acesse as configurações do seu repositório no GitHub e"
-echo "certifique-se de que o GitHub Pages está configurado para usar a pasta 'docs' no branch 'main'."
-echo "Seu site estará disponível em: https://gabrielalves939.github.io/gabrielalves939portifolio/"
-echo "----------------------------------------"
+echo "========================================"
+echo "Tudo pronto! Agora você pode:"
+echo "1. Enviar as alterações para o GitHub:"
+echo "   git push origin main"
+echo ""
+echo "2. Verificar seu site em:"
+echo "   https://gabrielalves939.github.io/gabrielalves939portifolio/"
+echo "========================================"

@@ -1,26 +1,43 @@
 #!/bin/bash
 
-# Execute estes comandos na sua máquina local:
+# Script simples para enviar atualizações para o GitHub
+echo "========================================"
+echo "Enviando seu portfólio para o GitHub"
+echo "========================================"
 
-# Clonar o repositório (se ainda não tiver feito)
-# git clone https://github.com/gabrielalves939/gabrielalves939portifolio.git
-# cd gabrielalves939portifolio
+# Verifica se há alterações pendentes
+if git diff-index --quiet HEAD --; then
+  echo "Nenhuma alteração pendente foi encontrada."
+else
+  echo "Há alterações pendentes. Deseja fazer commit? (s/n)"
+  read resposta
+  
+  if [ "$resposta" = "s" ]; then
+    echo "Digite uma mensagem para o commit:"
+    read mensagem
+    
+    # Adiciona todas as alterações e faz commit
+    git add .
+    git commit -m "$mensagem"
+    echo "Commit realizado com sucesso!"
+  else
+    echo "Operação cancelada pelo usuário."
+    exit 0
+  fi
+fi
 
-# Puxar as alterações do Replit
-# git pull
+# Pergunta se deseja fazer push
+echo "Deseja enviar as alterações para o GitHub? (s/n)"
+read resposta
 
-# OU se você quiser copiar manualmente:
-# 1. Baixe os arquivos da pasta "docs" do Replit
-# 2. Coloque-os na pasta "docs" do seu repositório local
-# 3. Execute:
-# git add docs -f
-# git commit -m "Adiciona página estática simples para GitHub Pages"
-
-# Enviar para o GitHub
-# git push origin main
-
-# Depois, no GitHub:
-# 1. Acesse as configurações do repositório
-# 2. Vá para a seção "Pages"
-# 3. Selecione branch "main" e pasta "/docs"
-# 4. Clique em "Save"
+if [ "$resposta" = "s" ]; then
+  echo "Enviando para o GitHub..."
+  git push origin main
+  
+  echo "========================================"
+  echo "Pronto! Seu site está disponível em:"
+  echo "https://gabrielalves939.github.io/gabrielalves939portifolio/"
+  echo "========================================"
+else
+  echo "Push cancelado pelo usuário."
+fi
