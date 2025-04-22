@@ -1,79 +1,165 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-  <head>
-    <style data-vite-theme="" data-inject-first="">:root {
-      --background: 0 0% 100%;
---foreground: 20 14.3% 4.1%;
---muted: 60 4.8% 95.9%;
---muted-foreground: 25 5.3% 44.7%;
---popover: 0 0% 100%;
---popover-foreground: 20 14.3% 4.1%;
---card: 0 0% 100%;
---card-foreground: 20 14.3% 4.1%;
---border: 20 5.9% 90%;
---input: 20 5.9% 90%;
---primary: 222 47% 55%;
---primary-foreground: 221 55% 99%;
---secondary: 60 4.8% 95.9%;
---secondary-foreground: 24 9.8% 10%;
---accent: 60 4.8% 95.9%;
---accent-foreground: 24 9.8% 10%;
---destructive: 0 84.2% 60.2%;
---destructive-foreground: 60 9.1% 97.8%;
---ring: 20 14.3% 4.1%;
---radius: 0.5rem;
-  }
-  .dark {
-      --background: 240 10% 3.9%;
---foreground: 0 0% 98%;
---muted: 240 3.7% 15.9%;
---muted-foreground: 240 5% 64.9%;
---popover: 240 10% 3.9%;
---popover-foreground: 0 0% 98%;
---card: 240 10% 3.9%;
---card-foreground: 0 0% 98%;
---border: 240 3.7% 15.9%;
---input: 240 3.7% 15.9%;
---primary: 222 47% 55%;
---primary-foreground: 221 55% 99%;
---secondary: 240 3.7% 15.9%;
---secondary-foreground: 0 0% 98%;
---accent: 240 3.7% 15.9%;
---accent-foreground: 0 0% 98%;
---destructive: 0 62.8% 30.6%;
---destructive-foreground: 0 0% 98%;
---ring: 240 4.9% 83.9%;
---radius: 0.5rem;
-  }</style>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Alves - Portfólio</title>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #3b82f6, #bfdbfe);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(to right, #3b82f6, #60a5fa);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 10px;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .social-links {
+      margin-top: 2rem;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #f8fafc;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #3b82f6;
+      transform: translateY(-3px);
+    }
+    
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 3px solid #3b82f6;
+    }
+    
+    .professional-info {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    
+    .professional-info h2 {
+      color: #60a5fa;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.5rem;
+    }
+    
+    .professional-info ul {
+      padding-left: 20px;
+    }
+    
+    .professional-info li {
+      margin-bottom: 0.5rem;
+    }
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Portifólio de Gabriel Alves, desenvolvedor web Front-end" />
-    <meta name="author" content="Gabriel Alves" />
-    <meta property="og:description" content="Portifólio de Gabriel Alves, desenvolvedor web Front-end" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
-    <meta property="og:type" content="website" />
-    <meta name="keywords" content="developer, programação, dev, desenvolvedor, programador, html, css, javascript, nodejs, reactjs, react, github, frontend, front-end" />
-    <meta name="robots" content="index" />
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #334155;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <img src="https://avatars.githubusercontent.com/u/123070128?v=4" alt="Gabriel Alves" class="profile-img">
     
-    <title>Gabriel Alves | Portfolio</title>
+    <h1>Gabriel Alves</h1>
+    <p>Desenvolvedor de Software | Engenheiro de Computação</p>
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <div>
+      <a href="https://github.com/gabrielalves939" class="btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/gabriel-alves-ferreira-a72a87261/" class="btn" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <div class="professional-info">
+      <h2>Sobre Mim</h2>
+      <p>
+        Estou em busca de uma oportunidade para aplicar minha experiência em desenvolvimento de software e engenharia de computação. Tenho conhecimento em várias linguagens de programação e tecnologias, com foco em desenvolvimento web e mobile.
+      </p>
+      
+      <h2>Habilidades</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>React.js, TypeScript</li>
+        <li>Node.js, Express</li>
+        <li>Git, GitHub</li>
+        <li>SQL, PostgreSQL</li>
+        <li>Design Responsivo</li>
+      </ul>
+      
+      <h2>Educação</h2>
+      <ul>
+        <li>Bacharelado em Engenharia de Computação - UFOP (cursando)</li>
+        <li>Informática para Internet - IFSULDEMINAS (2017-2019)</li>
+      </ul>
+    </div>
     
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
-    <script type="module" crossorigin src="./assets/index-Be1Fvxdj.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BLFQbk6Z.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+    <div class="social-links">
+      <a href="mailto:gabrielalves939@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/gabrielalves939" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/gabriel-alves-ferreira-a72a87261/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    
+    <footer>
+      <p>© 2024 Gabriel Alves. Todos os direitos reservados.</p>
+      <p>
+        <a href="https://gabrielalves939.github.io/gabrielalves939portifolio/pages/portfolio-completo.html" style="color: #3b82f6; text-decoration: none;">
+          Visite o portfólio completo no repositório local
+        </a>
+      </p>
+    </footer>
+  </div>
+</body>
 </html>
