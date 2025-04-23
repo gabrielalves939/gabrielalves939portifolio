@@ -1,10 +1,13 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
-async function throwIfResNotOk(res: Response) {
-  if (!res.ok) {
-    const text = (await res.text()) || res.statusText;
-    throw new Error(`${res.status}: ${text}`);
-  }
+// Esta é uma versão simplificada do queryClient para o site estático
+// Como não temos backend real, não precisamos fazer requisições reais
+
+// Mock simples para simular uma resposta
+async function mockResponse<T>(data: T): Promise<T> {
+  // Simula um tempo de resposta para parecer uma chamada real
+  await new Promise(resolve => setTimeout(resolve, 100));
+  return data;
 }
 
 export async function apiRequest(
@@ -12,39 +15,30 @@ export async function apiRequest(
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  const res = await fetch(url, {
-    method,
-    headers: data ? { "Content-Type": "application/json" } : {},
-    body: data ? JSON.stringify(data) : undefined,
-    credentials: "include",
+  // Versão simplificada apenas para manter a interface
+  console.log(`API Request simulada: ${method} ${url}`);
+  return new Response(JSON.stringify({ success: true }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' }
   });
-
-  await throwIfResNotOk(res);
-  return res;
 }
 
 type UnauthorizedBehavior = "returnNull" | "throw";
 export const getQueryFn: <T>(options: {
   on401: UnauthorizedBehavior;
 }) => QueryFunction<T> =
-  ({ on401: unauthorizedBehavior }) =>
-  async ({ queryKey }) => {
-    const res = await fetch(queryKey[0] as string, {
-      credentials: "include",
-    });
-
-    if (unauthorizedBehavior === "returnNull" && res.status === 401) {
-      return null;
-    }
-
-    await throwIfResNotOk(res);
-    return await res.json();
+  () =>
+  async () => {
+    // Versão simplificada que não faz chamadas reais
+    // Retorna um objeto vazio para evitar erros
+    return {} as any;
   };
 
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      queryFn: getQueryFn({ on401: "throw" }),
+      // Desativar o queryFn padrão, já que não temos API
+      queryFn: undefined,
       refetchInterval: false,
       refetchOnWindowFocus: false,
       staleTime: Infinity,
